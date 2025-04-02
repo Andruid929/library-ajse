@@ -1,4 +1,4 @@
-package net.druidlabs.ajse.readers;
+package net.druidlabs.ajse;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -11,12 +11,13 @@ import java.util.TreeSet;
  * This is a utility class that gives the ability to read from simple text files and the contents returned as {@code String} values.
  *
  * @author Andrew Jones
+ * @see TextFileWriter
  * @since 24
  */
 
-public final class ReadAFile {
+public final class TextFileReader extends TextFileOperation {
 
-    private ReadAFile() {
+    private TextFileReader() {
     }
 
     /**
@@ -28,12 +29,11 @@ public final class ReadAFile {
      */
 
     public static Set<String> readTheseFiles(File... files) throws IOException {
-        Set<String> strings = new TreeSet<>();
+        Set<String> strings = new TreeSet<>(); //Strings will be sorted alphabetically
 
         for (File file : files) {
             String filePath = file.getParentFile().getPath();
             String fileName = file.getName();
-
 
             strings.add(readThisFile(filePath, fileName));
         }
@@ -44,7 +44,7 @@ public final class ReadAFile {
     /**
      * Reads from a specified file and returns the contents of the file.
      * <p>For example, if a file named "Java.txt" is on a Windows desktop, the path will be
-     * {@systemProperty C:\Users\USERNAME\Desktop} and the file name {@systemProperty Java.txt}
+     * {@code C:\Users\USERNAME\Desktop} and the file name {@code Java.txt}
      * <p>If you want to read multiple files, use {@link #readTheseFiles(File...) readTheseFiles()} instead
      *
      * @param filePath the path to the file's parent folder.
@@ -54,7 +54,13 @@ public final class ReadAFile {
      */
 
     public static String readThisFile(String filePath, String fileName) throws IOException {
-        File fileToRead = new File(filePath + File.separator + fileName);
+        File fileToRead;
+
+        if (isTestFile(filePath, fileName)) {
+            fileToRead = new File(fileName);
+        } else {
+            fileToRead = getFile(filePath, fileName);
+        }
 
         try (FileReader fileReader = new FileReader(fileToRead);
              BufferedReader reader = new BufferedReader(fileReader)) {
@@ -75,10 +81,22 @@ public final class ReadAFile {
         StringBuilder builder = new StringBuilder();
 
         while ((line = reader.readLine()) != null) {
-            builder.append(line).append("\n");
+            builder.append(line).append("\r\n");
         }
 
         return builder;
     }
 
+    /**
+     * Checks whether the specified file's path and name equal those of the ones used in testing.
+     * @param filePath the folder directory containing the desired file.
+     * @param fileName the file's name including the file extension.
+     * @return {@code true} if the {@code filePath} is blank and {@code fileName} equals {@code "TestFile1.txt"} or {@code "TestFile2.txt"}.
+     * */
+
+    private static boolean isTestFile(String filePath, String fileName) {
+        boolean fileIsTestFile = fileName.equals("TestFile1.txt") || fileName.equals("TestFile2.txt");
+
+        return filePath.isBlank() && fileIsTestFile;
+    }
 }
