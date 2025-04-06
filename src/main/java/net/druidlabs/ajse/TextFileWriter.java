@@ -66,20 +66,15 @@ public final class TextFileWriter extends TextFileOperation {
      */
 
     public static synchronized void overwriteFile(String filePath, String fileName, String whatToWrite) throws IOException {
-        if (createFile(filePath, fileName)) {
+
+        File fileToBeWritten = getFile(filePath, fileName);
+
+        if (!fileToBeWritten.exists()) {
+            boolean _ = createFile(filePath, fileName);
+
             if (operationFeedbackEnabled) {
-                System.out.println("Successfully created file");
+                System.out.println("Created file \"" + fileName + "\" in \"" + filePath + "\"");
             }
-
-            overwriteFile(filePath, fileName, whatToWrite);
-        }
-
-        File fileToBeWritten;
-
-        if (filePath.endsWith(File.separator)) {
-            fileToBeWritten = new File(filePath + fileName);
-        } else {
-            fileToBeWritten = new File(filePath + File.separator + fileName);
         }
 
         write(fileToBeWritten, whatToWrite);
@@ -124,4 +119,5 @@ public final class TextFileWriter extends TextFileOperation {
             }
         }
     }
+
 }
