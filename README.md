@@ -1,6 +1,6 @@
-# **Andrew Junk Software Edition**
+# *Andrew's Junky Software Edition*
 
-## _What is the repo about?_
+### What is the repo about?
 
 This repo is the official repository of the Java library AJSE, 
 which is a library focused on providing simple methods on

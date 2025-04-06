@@ -27,9 +27,9 @@ public final class TextFileWriter extends TextFileOperation {
     }
 
     /**
-     * This method is there to change whether the operation feedback is enabled or not.
+     * This method is there to change whether the operation feedback in the terminal is enabled or not.
      *
-     * @param feedbackEnabled is operation feedback enabled? {@code True} for enabled and {@code False} for disabled.
+     * @param feedbackEnabled is operation feedback enabled? {@code true} for enabled and {@code false} for disabled.
      */
 
     public static synchronized void toggleOperationFeedback(boolean feedbackEnabled) {
