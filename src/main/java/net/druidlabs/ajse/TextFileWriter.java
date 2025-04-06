@@ -48,11 +48,7 @@ public final class TextFileWriter extends TextFileOperation {
      */
 
     public static synchronized boolean createFile(String filePath, String fileName) throws IOException {
-        if (filePath.endsWith(File.separator)) {
-            return new File(filePath + fileName).createNewFile();
-        }
-
-        return new File(filePath + File.separator + fileName).createNewFile();
+        return getFile(filePath, fileName).createNewFile();
     }
 
     /**
