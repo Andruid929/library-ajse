@@ -4,7 +4,9 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Map;
 import java.util.Set;
+import java.util.TreeMap;
 import java.util.TreeSet;
 
 /**
@@ -20,6 +22,8 @@ public final class TextFileReader extends TextFileOperation {
     private TextFileReader() {
     }
 
+
+
     /**
      * This method reads given files and each file's contents are collected.
      *
@@ -29,16 +33,16 @@ public final class TextFileReader extends TextFileOperation {
      */
 
     public static Set<String> readTheseFiles(File... files) throws IOException {
-        Set<String> strings = new TreeSet<>(); //Strings will be sorted alphabetically
+        Set<String> readFileData = new TreeSet<>(); //Strings will be sorted alphabetically
 
         for (File file : files) {
             String filePath = file.getParentFile().getPath();
             String fileName = file.getName();
 
-            strings.add(readThisFile(filePath, fileName));
+            readFileData.add(readThisFile(filePath, fileName));
         }
 
-        return strings;
+        return readFileData;
     }
 
     /**
