@@ -9,6 +9,9 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class TextFileReaderTest {
 
+    private final File file1 = new File(" \\TestFile1.txt");
+    private final File file2 = new File(" \\TestFile2.txt");
+
     /**
      * Test for the {@code TextFileReader.readThisFile()}
      */
@@ -26,9 +29,6 @@ class TextFileReaderTest {
 
     @Test
     void readTheseFiles() throws IOException {
-        File file1 = new File(" \\TestFile1.txt");
-        File file2 = new File(" \\TestFile2.txt");
-
         assertEquals("I am the", TextFileReader.readTheseFiles(file1, file2).stream().toList().getFirst().substring(0, 8));
     }
 
@@ -38,9 +38,6 @@ class TextFileReaderTest {
 
     @Test
     void readTheseFilesTestTwo() throws IOException {
-        File file1 = new File(" \\TestFile1.txt");
-        File file2 = new File(" \\TestFile2.txt");
-
         assertEquals("This is ", TextFileReader.readTheseFiles(file1, file2).stream().toList().getLast().substring(0, 8));
     }
 
@@ -50,9 +47,6 @@ class TextFileReaderTest {
 
     @Test
     void getTheseFilesTest() throws IOException {
-        File file1 = new File(" \\TestFile1.txt");
-        File file2 = new File(" \\TestFile2.txt");
-
         assertEquals("I am the", TextFileReader.getTheseFiles(file1, file2).get("TestFile2.txt").substring(0, 8));
     }
 
