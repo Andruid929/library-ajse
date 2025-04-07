@@ -22,7 +22,28 @@ public final class TextFileReader extends TextFileOperation {
     private TextFileReader() {
     }
 
+    /**
+     * This method reads given files and collects them.
+     * Unlike {@link #readTheseFiles(File...) readTheseFiles()},
+     * this method gives the ability to specify which file's contents you would like to get by passing in the file's name and extension.
+     *
+     * @param files at least one {@code File} object pointing to a file to be read and collected.
+     * @throws IOException if an input error occurs
+     * @return {@code Map<String, String>} containing file names and their respective file contents.
+     * */
 
+    public static Map<String, String> getTheseFiles(File... files) throws IOException {
+        Map<String, String> readFileData = new TreeMap<>();
+
+        for (File file : files) {
+            String filePath = file.getParentFile().getPath();
+            String fileName = file.getName();
+
+            readFileData.put(fileName, readThisFile(filePath, fileName));
+        }
+
+        return readFileData;
+    }
 
     /**
      * This method reads given files and each file's contents are collected.
