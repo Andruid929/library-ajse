@@ -1,4 +1,4 @@
-# *Andrew's Junky Software Edition*
+# *Andrew's Junk Software Edition*
 
 ### What is the repo about?
 
