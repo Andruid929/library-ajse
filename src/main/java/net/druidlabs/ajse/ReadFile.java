@@ -22,14 +22,6 @@ public class ReadFile extends TextFileOperation {
     private final String filePath;
 
     private ReadFile(String filePath, String fileName) throws IOException {
-        File thisFile = getFile(filePath, fileName);
-
-        if (!thisFile.exists()) {
-            throw new IOException("File doesn't exist");
-        } else if (!thisFile.isFile()) {
-            throw new IOException("Found folder and not file");
-        }
-
         this.fileName = fileName;
         this.filePath = filePath;
 
