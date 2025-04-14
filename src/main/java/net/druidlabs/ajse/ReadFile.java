@@ -13,7 +13,7 @@ import java.util.Objects;
  *
  * @version 1.0
  * @since 1.0
- * */
+ */
 
 public class ReadFile extends TextFileOperation {
 
@@ -31,9 +31,9 @@ public class ReadFile extends TextFileOperation {
     /**
      * Get the contents of the file read.
      *
-     * @since 1.0
      * @return {@code String} of the file contents
-     * */
+     * @since 1.0
+     */
 
     public String getContents() {
         return contents;
@@ -42,9 +42,9 @@ public class ReadFile extends TextFileOperation {
     /**
      * Get the name of the file read.
      *
-     * @since 1.0
      * @return {@code String} of the file name
-     * */
+     * @since 1.0
+     */
 
     public String getFileName() {
         return fileName;
@@ -53,9 +53,9 @@ public class ReadFile extends TextFileOperation {
     /**
      * Get the path of the file read.
      *
-     * @since 1.0
      * @return {@code String} of the file's location
-     * */
+     * @since 1.0
+     */
 
     public String getFilePath() {
         return filePath;
@@ -78,7 +78,7 @@ public class ReadFile extends TextFileOperation {
      *
      * @return {@code ReadFile} object containing the data of the file passed in.
      * @since 1.0
-     * */
+     */
 
     @Contract(pure = true)
     @NotNull

@@ -6,6 +6,13 @@ import java.io.IOException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Unit test for the {@link ReadFile} class
+ *
+ * @version 1.0
+ * @since 1.0
+ */
+
 class ReadFileTest {
 
     private final ReadFile readFile = ReadFile.getThisFile(" ", "TestFile1.txt");
@@ -15,7 +22,7 @@ class ReadFileTest {
 
     /**
      * Testing {@code ReadFile#getFileName}
-     * */
+     */
 
     @Test
     void getFileName() {
@@ -24,7 +31,7 @@ class ReadFileTest {
 
     /**
      * Testing {@code ReadFile#getFilepath}
-     * */
+     */
 
     @Test
     void getFilePath() {
@@ -33,7 +40,7 @@ class ReadFileTest {
 
     /**
      * Testing {@code ReadFile#getFileName}
-     * */
+     */
 
     @Test
     void getFileContents() {

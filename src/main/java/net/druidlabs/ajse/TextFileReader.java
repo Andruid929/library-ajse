@@ -13,8 +13,9 @@ import java.util.TreeSet;
  * This is a utility class that gives the ability to read from simple text files and the contents returned as {@code String} values.
  *
  * @author Andrew Jones
+ * @version 1.0
  * @see TextFileWriter
- * @since 24
+ * @since 0.1
  */
 
 public final class TextFileReader extends TextFileOperation {
@@ -28,9 +29,10 @@ public final class TextFileReader extends TextFileOperation {
      * this method gives the ability to specify which file's contents you would like to get by passing in the file's name and extension.
      *
      * @param files at least one {@code File} object pointing to a file to be read and collected.
-     * @throws IOException if an input error occurs
      * @return {@code Map<String, String>} containing file names and their respective file contents.
-     * */
+     * @throws IOException if an input error occurs
+     * @since 0.1
+     */
 
     public static Map<String, String> getTheseFiles(File... files) throws IOException {
         Map<String, String> readFileData = new TreeMap<>();
@@ -51,6 +53,7 @@ public final class TextFileReader extends TextFileOperation {
      * @param files {@code File} objects separated by commas to be read and contents collected.
      * @return {@code Set<String>} containing all file contents.
      * @throws IOException if the file path given is not a file or file does not exist.
+     * @since 0.1
      */
 
     public static Set<String> readTheseFiles(File... files) throws IOException {
@@ -76,6 +79,7 @@ public final class TextFileReader extends TextFileOperation {
      * @param fileName the name of the desired file including the file extension.
      * @return {@code String} of the contents in the file.
      * @throws IOException if the file path given is invalid or the file does not exist.
+     * @since 0.1
      */
 
     public static String readThisFile(String filePath, String fileName) throws IOException {
@@ -96,12 +100,13 @@ public final class TextFileReader extends TextFileOperation {
 
     /**
      * Helper method that collects and formats text collected by the reader.
-     * @throws IOException if an input error occurs.
-     * @return {@code StringBuilder} containing the formatted file contents.
+     *
      * @param reader a {@code BufferedReader} that is in charge of reading the file.
-     * */
+     * @return {@code StringBuilder} containing the formatted file contents.
+     * @throws IOException if an input error occurs.
+     */
 
-    private static StringBuilder getStringBuilder(BufferedReader reader) throws IOException{
+    private static StringBuilder getStringBuilder(BufferedReader reader) throws IOException {
         String line;
         StringBuilder builder = new StringBuilder();
 
@@ -114,10 +119,12 @@ public final class TextFileReader extends TextFileOperation {
 
     /**
      * Checks whether the specified file's path and name equal those of the ones used in testing.
+     *
      * @param filePath the folder directory containing the desired file.
      * @param fileName the file's name including the file extension.
      * @return {@code true} if the {@code filePath} is blank and {@code fileName} equals {@code "TestFile1.txt"} or {@code "TestFile2.txt"}.
-     * */
+     * @since 0.1
+     */
 
     private static boolean isTestFile(String filePath, String fileName) {
         boolean fileIsTestFile = fileName.equals("TestFile1.txt") || fileName.equals("TestFile2.txt");

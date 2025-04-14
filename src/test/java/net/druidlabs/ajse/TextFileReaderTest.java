@@ -7,6 +7,13 @@ import java.io.IOException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Unit test for the {@link TextFileReader}
+ *
+ * @version 1.0
+ * @since 0.1
+ */
+
 class TextFileReaderTest {
 
     private final File file1 = new File(" \\TestFile1.txt");

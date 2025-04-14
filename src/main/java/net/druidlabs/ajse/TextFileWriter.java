@@ -9,14 +9,17 @@ import java.io.IOException;
  * Utility class that contains methods for writing simple text data to created or existing files.
  *
  * @author Andrew Jones
+ * @version 1.0
  * @see TextFileReader
- * @since 24
+ * @since 0.1
  */
 
 public final class TextFileWriter extends TextFileOperation {
 
     /**
      * {@code true} by default, there will be notifications in the terminal if a file operation was successful.
+     *
+     * @since 0.1
      */
     private static boolean operationFeedbackEnabled = true;
 
@@ -30,6 +33,7 @@ public final class TextFileWriter extends TextFileOperation {
      * This method is there to change whether the operation feedback in the terminal is enabled or not.
      *
      * @param feedbackEnabled is operation feedback enabled? {@code true} for enabled and {@code false} for disabled.
+     * @since 0.1
      */
 
     public static synchronized void toggleOperationFeedback(boolean feedbackEnabled) {
@@ -45,6 +49,7 @@ public final class TextFileWriter extends TextFileOperation {
      * @param fileName the file name to be created as well its file extension. For example, {@code "Java.txt"}.
      * @return {@code true} if the file was created successfully or {@code false} if the file already exists.
      * @throws IOException if any output error occurs.
+     * @since 0.1
      */
 
     public static synchronized boolean createFile(String filePath, String fileName) throws IOException {
@@ -63,6 +68,7 @@ public final class TextFileWriter extends TextFileOperation {
      * @param fileName    the file which is to be overwritten or to be created.
      * @param whatToWrite what the program should write to the file.
      * @throws IOException if any output error occurs.
+     * @since 0.1
      */
 
     public static synchronized void overwriteFile(String filePath, String fileName, String whatToWrite) throws IOException {
@@ -88,6 +94,7 @@ public final class TextFileWriter extends TextFileOperation {
      * @param fileName  the file which is to be modified.
      * @param whatToAdd what the program should add to the file.
      * @throws IOException if any output error occurs.
+     * @since 0.1
      */
 
     public static synchronized void addToFile(String filePath, String fileName, String whatToAdd) throws IOException {
@@ -104,6 +111,7 @@ public final class TextFileWriter extends TextFileOperation {
      * @param fileToBeWritten the file to which all the writing shall happen.
      * @param whatToWrite     data to be written to the file, can be multiple {@code String} objects.
      * @throws IOException if any output error should occur.
+     * @since 0.1
      */
 
     private static synchronized void write(File fileToBeWritten, String... whatToWrite) throws IOException {
