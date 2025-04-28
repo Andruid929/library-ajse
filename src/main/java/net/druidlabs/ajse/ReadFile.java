@@ -3,7 +3,6 @@ package net.druidlabs.ajse;
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 
-import java.io.File;
 import java.io.IOException;
 import java.util.Objects;
 
@@ -77,6 +76,9 @@ public class ReadFile extends TextFileOperation {
      * Create an instance of this class.
      *
      * @return {@code ReadFile} object containing the data of the file passed in.
+     * @throws IOException if any input error occurs.
+     * @param fileName the name of the file including the file extension.
+     * @param filePath the location of the file.
      * @since 1.0
      */
 
