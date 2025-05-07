@@ -11,6 +11,7 @@ import static org.junit.jupiter.api.Assertions.*;
  *
  * @version 1.0
  * @since 1.0
+ * @author Andrew Jones
  */
 
 class ReadFileTest {

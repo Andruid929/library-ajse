@@ -12,6 +12,7 @@ import java.util.Objects;
  *
  * @version 1.0
  * @since 1.0
+ * @author Andrew Jones
  */
 
 public class ReadFile extends TextFileOperation {

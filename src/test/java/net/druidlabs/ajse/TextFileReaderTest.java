@@ -12,6 +12,7 @@ import static org.junit.jupiter.api.Assertions.*;
  *
  * @version 1.0
  * @since 0.1
+ * @author Andrew Jones
  */
 
 class TextFileReaderTest {
