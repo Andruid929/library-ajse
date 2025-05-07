@@ -116,19 +116,4 @@ public final class TextFileReader extends TextFileOperation {
 
         return builder;
     }
-
-    /**
-     * Checks whether the specified file's path and name equal those of the ones used in testing.
-     *
-     * @param filePath the folder directory containing the desired file.
-     * @param fileName the file's name including the file extension.
-     * @return {@code true} if the {@code filePath} is blank and {@code fileName} equals {@code "TestFile1.txt"} or {@code "TestFile2.txt"}.
-     * @since 0.1
-     */
-
-    private static boolean isTestFile(String filePath, String fileName) {
-        boolean fileIsTestFile = fileName.equals("TestFile1.txt") || fileName.equals("TestFile2.txt");
-
-        return filePath.isBlank() && fileIsTestFile;
-    }
 }
