@@ -28,7 +28,7 @@ public final class FileLineCollector extends TextFileOperation {
      *
      * @param folderPath location of the file to be read.
      * @param fileName   name of the file to be read and the file extension.
-     * @return Unsorted set of strings where each element is a random line from the file.
+     * @return {@code HashSet} of strings where each element is a random line from the file.
      * @throws IOException if any input error occurs.
      */
 
@@ -53,7 +53,7 @@ public final class FileLineCollector extends TextFileOperation {
      *
      * @param folderPath location of the file to be read.
      * @param fileName   name of the file to be read and the file extension.
-     * @return Sorted list of strings where each element is a random line from the file.
+     * @return {@code ArrayList} of strings where each element is a random line from the file.
      * @throws IOException if any input error occurs.
      */
 
