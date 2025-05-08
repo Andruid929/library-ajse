@@ -43,7 +43,7 @@ abstract class TextFileOperation {
      */
 
     protected static boolean isTestFile(String filePath, String fileName) {
-        boolean fileIsTestFile = fileName.equals("TestFile1.txt") || fileName.equals("TestFile2.txt");
+        boolean fileIsTestFile = fileName.equals("TestFile1.txt") || fileName.equals("TestFile2.txt") || fileName.equals("TestFile3.txt");
 
         return filePath.isBlank() && fileIsTestFile;
     }
